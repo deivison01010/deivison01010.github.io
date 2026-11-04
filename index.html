@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deyvison Portfolio 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfólio 2026 de Deyvison Oliveira: social media, design, tráfego pago e audiovisual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Saira+Semi+Condensed:wght@500;600;700&display=swap">
+<style>
+/* Layout: arquivo de portfólio. Mesa escura quadriculada, abas de pasta entre os capítulos e uma cor própria para cada marca. */
+:root {
+  color-scheme: dark;
+  --carvao: #141312;
+  --carvao-2: #211f1c;
+  --areia: #dcc496;
+  --areia-clara: #f0e1bd;
+  --areia-escura: #a98a52;
+  --vermelho: #d6331d;
+  --branco: #f6f3ea;
+  --apoio: #bdb7aa;
+  --quadricula: rgba(255, 255, 255, .045);
+  --titulo: "Outfit", "Segoe UI", Arial, sans-serif;
+  --aba: "Saira Semi Condensed", "Arial Narrow", Arial, sans-serif;
+  --gutter-e: max(clamp(16px, 4.5vw, 72px), env(safe-area-inset-left, 0px));
+  --gutter-d: max(clamp(16px, 4.5vw, 72px), env(safe-area-inset-right, 0px));
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--carvao); color: var(--branco); font: 400 17px/1.5 var(--titulo); overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3, p, dl, dd, ul, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+img { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--areia-clara); outline-offset: 3px; }
+.faixa { padding-left: max(16px, var(--gutter-e)); padding-right: max(16px, var(--gutter-d)); }
+.quadriculado { background-color: var(--carvao); background-image: linear-gradient(var(--quadricula) 1px, transparent 1px), linear-gradient(90deg, var(--quadricula) 1px, transparent 1px); background-size: 44px 44px; }
+.dourado { background: linear-gradient(180deg, var(--areia-clara) 8%, var(--areia) 48%, var(--areia-escura) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.etiqueta { display: inline-block; padding: .08em .42em .12em; background: var(--vermelho); color: #fff; font: 800 1em/1.1 var(--titulo); letter-spacing: -.03em; transform: rotate(-2deg); border-radius: .14em; }
+.sinais { display: flex; gap: 6px; }
+.sinais i { width: 11px; height: 11px; border-radius: 50%; background: #d8483a; }
+.sinais i:nth-child(2) { background: #d9a93a; }
+.sinais i:nth-child(3) { background: #56a64d; }
+.do-logo { display: block; width: auto; height: 1em; flex: none; }
+.capa-logo { position: absolute; z-index: 3; top: 5%; left: 40.6%; width: clamp(170px, 19vw, 320px); height: auto; margin-left: calc(clamp(170px, 19vw, 320px) / -2); }
+.fim-logo { display: block; width: clamp(240px, 26vw, 400px); height: auto; }
+.impresso { position: absolute; display: block; height: auto; box-shadow: 0 26px 50px rgba(0, 0, 0, .62), 0 4px 10px rgba(0, 0, 0, .5); }
+.celular { position: absolute; padding: 1.4%; aspect-ratio: 9 / 18.6; background: #0b0b0c; border-radius: 9% / 4.6%; box-shadow: 0 30px 60px rgba(0, 0, 0, .65), inset 0 0 0 2px #38383b; }
+.celular img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 8% / 3.9%; }
+.progresso { position: fixed; z-index: 20; top: env(safe-area-inset-top, 0px); left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--vermelho), var(--areia)); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+
+/* Capa */
+.capa { position: relative; overflow: hidden; aspect-ratio: 16 / 10; min-height: 620px; width: 100%; background: var(--carvao); }
+.capa-cena { position: absolute; inset: -3%; will-change: transform; }
+.capa-foto { position: absolute; inset: 0; background: linear-gradient(var(--quadricula) 1px, transparent 1px) 0 0 / 44px 44px, linear-gradient(90deg, var(--quadricula) 1px, transparent 1px) 0 0 / 44px 44px, url("assets/capa.webp") center / cover no-repeat; will-change: transform; }
+.capa::before { content: ""; position: absolute; z-index: 1; inset: 0; background: radial-gradient(36% 40% at 50% 50%, rgba(214, 170, 92, .24), transparent 100%); pointer-events: none; }
+.capa-titulo { position: absolute; z-index: 3; top: 50%; left: 50%; width: max-content; transform: translate(-50%, -50%); padding: .22em .3em; font-size: clamp(66px, 11.6vw, 190px); will-change: translate; }
+.capa-titulo::before, .capa-titulo::after { content: ""; position: absolute; width: 60%; height: 80%; pointer-events: none; }
+.capa-titulo::before { top: 0; left: 0; border-top: 1px dashed rgba(255, 255, 255, .34); border-left: 1px dashed rgba(255, 255, 255, .34); }
+.capa-titulo::after { right: 0; bottom: 0; border-right: 1px dashed rgba(255, 255, 255, .34); border-bottom: 1px dashed rgba(255, 255, 255, .34); }
+.capa-titulo small { display: block; font: 300 .2em/1 var(--titulo); letter-spacing: 0; color: var(--areia-clara); }
+.capa-titulo strong { display: block; font: 800 1em/.94 var(--titulo); letter-spacing: -.055em; padding-right: .06em; padding-bottom: .06em; }
+.capa-titulo .ano { position: absolute; top: .42em; right: .5em; font: 400 .15em/1 var(--titulo); letter-spacing: .12em; padding: .25em .5em; border: 1px dashed rgba(255, 255, 255, .34); color: var(--branco); }
+.capa-titulo .nome-tag { position: absolute; right: .28em; bottom: -.1em; font-size: .24em; }
+.capa-contato { position: absolute; z-index: 4; right: 7.5%; bottom: 9%; display: grid; gap: 8px; justify-items: start; font-size: 14.5px; }
+.capa-contato .do-logo { height: 56px; }
+.capa-contato a { text-decoration: none; }
+.capa-contato a:hover { text-decoration: underline; }
+
+/* Sobre */
+.sobre { position: relative; overflow: hidden; padding-block: clamp(44px, 6vw, 88px) 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 6fr); gap: 0 28px; }
+.sobre-texto { padding-bottom: clamp(44px, 6vw, 88px); min-width: 0; }
+.sobre .ola { display: flex; align-items: flex-end; gap: 12px; font: 800 clamp(66px, 9vw, 136px)/.85 var(--titulo); letter-spacing: -.05em; }
+.sobre .sinais { margin-bottom: 14px; }
+.sobre h1 { margin-top: 10px; font: 800 clamp(44px, 6vw, 90px)/.98 var(--titulo); letter-spacing: -.045em; }
+.sobre h1 span { font-weight: 300; font-size: .5em; letter-spacing: -.02em; color: var(--branco); margin-right: .2em; }
+.sobre-intro { margin-top: 20px; max-width: 34em; padding-left: 16px; border-left: 1px dashed rgba(255, 255, 255, .34); }
+.colunas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 26px; margin-top: 36px; }
+.colunas h2 { font-size: clamp(21px, 1.9vw, 27px); }
+.colunas ul { margin-top: 14px; font-size: 15px; display: grid; gap: 7px; }
+.ferramentas { display: flex !important; flex-wrap: wrap; gap: 8px !important; }
+.ferramentas li { padding: 7px 11px; border: 1.5px solid var(--areia); border-radius: 9px; color: var(--areia-clara); font-weight: 500; font-size: 14px; line-height: 1.1; transition: background-color .2s ease, color .2s ease, transform .3s cubic-bezier(.2, 1.5, .4, 1); }
+.ferramentas li:hover { background: var(--areia); color: #1b1916; transform: translateY(-3px) rotate(-2deg); }
+.sobre-foto { position: relative; align-self: end; min-width: 0; min-height: 100%; }
+.sobre-foto .recorte { position: absolute; right: -12%; bottom: 0; width: 128%; max-width: none; height: auto; transform-origin: 50% 100%; }
+.polaroide { position: absolute; z-index: 2; left: -9%; top: 20%; width: 34%; padding: 9px 9px 30px; background: #fbfaf5; transform: rotate(-7deg); box-shadow: 0 18px 34px rgba(0, 0, 0, .55); transition: transform .5s cubic-bezier(.2, 1.5, .4, 1); }
+.polaroide:hover { transform: rotate(-1deg) scale(1.05); }
+.polaroide img { display: block; width: 100%; height: auto; }
+.polaroide::before { content: ""; position: absolute; top: -16px; left: 28%; width: 44%; height: 30px; background: rgba(226, 203, 150, .86); transform: rotate(4deg); }
+
+/* Fita */
+.fita { overflow: hidden; background: linear-gradient(180deg, var(--areia-clara), var(--areia)); color: #1b1916; }
+.fita div { display: flex; align-items: center; gap: .5em; width: max-content; padding-block: .16em .2em; font: 800 clamp(44px, 6vw, 88px)/1 var(--titulo); letter-spacing: -.04em; animation: correr 34s linear infinite; }
+.fita .do-logo { height: .78em; }
+@keyframes correr { to { transform: translateX(-50%); } }
+
+/* Abas */
+.abas { position: relative; display: flex; align-items: flex-end; gap: 0; padding-top: 16px; background: var(--carvao); overflow: hidden; }
+.abas::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 16px; background: var(--areia); }
+.abas a { position: relative; z-index: 1; display: block; flex: 0 1 auto; min-width: 0; margin-right: 26px; padding: 8px 8px 18px max(16px, var(--gutter-e)); background: var(--areia); border-radius: 0 16px 0 0; color: #1f1c17; text-decoration: none; font: 700 clamp(24px, 3.1vw, 44px)/1 var(--aba); transition: color .2s ease, translate .3s cubic-bezier(.2, 1.4, .4, 1); }
+.abas a + a { padding-left: 14px; border-radius: 16px 16px 0 0; }
+.abas a small { display: block; margin-top: 2px; font: 500 clamp(11px, 1.05vw, 14px)/1.1 var(--titulo); }
+.abas a::after { content: ""; position: absolute; top: 0; bottom: 0; right: -24px; width: 34px; background: var(--areia); clip-path: polygon(0 0, 22% 0, 100% 100%, 0 100%); }
+.abas a.ativa { color: var(--vermelho); z-index: 2; }
+.abas a:hover { color: var(--vermelho); translate: 0 -6px; }
+.abas .arquivos { position: relative; z-index: 3; margin-left: auto; align-self: flex-end; display: flex; align-items: center; gap: 12px; flex: none; padding: 12px var(--gutter-d) 18px 34px; background: #f4f2ec; clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%); color: #3a3833; font: 500 14px/1 var(--titulo); letter-spacing: .16em; }
+
+/* Abertura de capítulo */
+.capitulo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px clamp(28px, 5vw, 72px); align-items: center; padding-block: clamp(44px, 6vw, 84px); }
+.capitulo h2 { font: 800 clamp(58px, 6.4vw, 112px)/.98 var(--titulo); letter-spacing: -.055em; padding-bottom: .08em; }
+.capitulo .sub { margin-top: 4px; font: 500 clamp(22px, 2.3vw, 34px)/1.05 var(--aba); letter-spacing: .03em; text-transform: uppercase; }
+.capitulo .desc { margin-top: 22px; padding: 18px 20px; max-width: 30em; border: 1px solid rgba(220, 196, 150, .42); border-radius: 18px; }
+.indices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
+.indices dd { font: 800 clamp(30px, 3.3vw, 50px)/1 var(--titulo); letter-spacing: -.04em; color: var(--areia); font-variant-numeric: tabular-nums; }
+.indices dt { margin-top: 4px; font-size: 13.5px; line-height: 1.3; color: var(--apoio); }
+.indices div { display: flex; flex-direction: column-reverse; justify-content: flex-end; min-width: 0; }
+.fonte { margin-top: 14px; font-size: 13px; color: var(--apoio); }
+.painel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(110px, 12.4vw, 190px); perspective: 1200px; }
+.painel a { position: relative; display: block; overflow: hidden; }
+.painel img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .45s cubic-bezier(.2, .9, .3, 1); }
+.painel a:hover img { transform: scale(1.07); }
+.painel .logo { display: flex; align-items: center; justify-content: center; padding: 10%; }
+.painel .logo img { object-fit: contain; object-position: center; }
+.painel .logo.texto { font: 700 clamp(14px, 1.65vw, 26px)/1.05 var(--titulo); letter-spacing: -.02em; padding: 6%; text-decoration: none; text-align: center; color: #fff; }
+.span2 { grid-column: span 2; }
+
+/* Marcas */
+.marca { position: relative; padding-block: clamp(40px, 5vw, 72px) clamp(44px, 6vw, 84px); overflow: hidden; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 44px 44px; }
+.malibu { background-color: #174745; }
+.mcosta { background-color: #bd9238; }
+.montecarlo { background-color: #5f6239; }
+.rf { background-color: #173f8e; }
+.pilula { display: inline-block; padding: 4px 16px; border: 1.5px solid rgba(255, 255, 255, .62); border-radius: 99px; font-size: 15px; }
+.marca-corpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 26px clamp(24px, 4vw, 64px); margin-top: 22px; align-items: center; }
+.janela { min-width: 0; padding: 20px clamp(18px, 2vw, 28px) 24px; background: rgba(12, 12, 11, .78); border: 1.5px solid rgba(255, 255, 255, .32); border-radius: 26px; }
+.janela .logo-marca { display: block; width: auto; height: clamp(84px, 9vw, 128px); margin: 16px 0 14px; }
+.janela .logo-texto { margin: 16px 0 14px; font: 800 clamp(38px, 4.4vw, 64px)/1 var(--titulo); letter-spacing: -.04em; color: #fff; }
+.janela h2 { font: 700 19px/1.25 var(--titulo); color: var(--areia-clara); }
+.janela h2 + p { margin-top: 8px; font-size: 16px; }
+.janela b { font-weight: 700; color: #fff; }
+.ficha { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 18px; }
+.ficha div { display: flex; flex-direction: column-reverse; }
+.ficha dd { font: 800 clamp(30px, 3vw, 42px)/1 var(--titulo); letter-spacing: -.04em; color: var(--areia); font-variant-numeric: tabular-nums; }
+.ficha dt { margin-top: 3px; font-size: 13px; color: var(--apoio); }
+.funil { display: grid; gap: 4px; margin-top: 14px; font-size: 14.5px; }
+.funil b { display: inline-block; min-width: 4.6em; color: var(--areia); }
+.cores { display: flex; gap: 7px; margin-top: 18px; }
+.cores i { width: 22px; height: 22px; border-radius: 50%; }
+.maquete { position: relative; aspect-ratio: 10 / 8.4; min-width: 0; }
+.maquete .m1 { width: 44%; left: 2%; top: 8%; transform: rotate(-9deg); }
+.maquete .m2 { width: 44%; left: 26%; top: 18%; transform: rotate(-1deg); z-index: 1; }
+.maquete .celular { width: 31%; right: 5%; top: 2%; transform: rotate(7deg); z-index: 2; }
+.maquete .m3 { width: 44%; right: 2%; top: 9%; transform: rotate(8deg); z-index: 0; }
+.artes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(6px, .8vw, 12px); margin-top: clamp(26px, 3.4vw, 44px); }
+.quadro { position: relative; display: block; padding: 0; border: 0; background: none; cursor: zoom-in; min-width: 0; transition: transform .35s cubic-bezier(.2, 1.3, .4, 1), box-shadow .3s ease; }
+.quadro img { display: block; width: 100%; height: auto; }
+.quadro:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 24px 44px rgba(0, 0, 0, .45); z-index: 2; }
+.quadro:active { transform: scale(.98); }
+.outdoor { margin-top: clamp(26px, 3.4vw, 44px); }
+.outdoor .quadro { width: 100%; box-shadow: 0 26px 50px rgba(0, 0, 0, .45); }
+.outdoor .quadro:hover { transform: scale(1.01); }
+.outdoor figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 20px; margin-top: 12px; font-size: 15px; }
+
+/* Social media */
+.social { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr) minmax(0, 2fr); gap: 28px clamp(22px, 3vw, 44px); align-items: center; padding-block: clamp(44px, 6vw, 84px); }
+.social-cartao { position: relative; padding: 18px 20px 24px; border: 1.5px solid rgba(220, 196, 150, .42); border-radius: 26px; min-width: 0; }
+.social-cartao .ano { position: absolute; top: 16px; right: 20px; font-size: 14px; letter-spacing: .12em; color: var(--apoio); }
+.social-cartao h2 { margin-top: 16px; font: 800 clamp(62px, 7.6vw, 116px)/.86 var(--titulo); letter-spacing: -.055em; padding-bottom: .06em; }
+.social-cartao h2 span { display: block; }
+.social-cartao p { margin-top: 14px; font-size: 16px; }
+.mosaico { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; min-width: 0; outline: 1px dashed rgba(255, 255, 255, .26); outline-offset: 12px; }
+.nichos { font-size: 17px; line-height: 1.2; text-transform: uppercase; display: grid; gap: 6px; min-width: 0; }
+.nichos li:nth-child(2) { font-weight: 700; }
+
+/* Audiovisual */
+.filmes { padding-block: clamp(44px, 6vw, 84px); }
+.filmes h2 { font: 800 clamp(70px, 10vw, 158px)/.92 var(--titulo); letter-spacing: -.055em; padding-bottom: .08em; }
+.filmes-texto { max-width: 38em; margin-top: 6px; }
+.filmes-grade { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(6px, .9vw, 14px); margin-top: 28px; }
+.filmes-grade figure { grid-column: span 2; min-width: 0; }
+.filmes-grade .filme-largo { grid-column: span 3; }
+.filmes-grade video { display: block; width: 100%; height: auto; background: #000; }
+.filmes-grade figcaption { margin-top: 8px; font-size: 14px; color: var(--apoio); }
+
+/* Serviços */
+.servicos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px clamp(20px, 2.6vw, 38px); padding-bottom: clamp(44px, 6vw, 84px); }
+.servicos li { min-width: 0; }
+.servicos h3 { display: inline-block; font-size: clamp(22px, 2vw, 28px); transition: transform .35s cubic-bezier(.2, 1.5, .4, 1); }
+.servicos li:hover h3 { transform: rotate(1deg) scale(1.05); }
+.servicos p { margin-top: 12px; font-size: 15.5px; color: #dcd8cd; }
+
+/* Fim */
+.fim { position: relative; overflow: hidden; min-height: clamp(560px, 56vw, 860px); display: grid; place-items: center; padding-block: 60px; background: linear-gradient(var(--quadricula) 1px, transparent 1px) 0 0 / 44px 44px, linear-gradient(90deg, var(--quadricula) 1px, transparent 1px) 0 0 / 44px 44px, url("assets/capa.webp") center / cover no-repeat, var(--carvao); }
+.fim::before { content: ""; position: absolute; inset: 0; background: radial-gradient(34% 40% at 50% 50%, rgba(214, 170, 92, .2), transparent 100%); }
+.fim-centro { position: relative; z-index: 2; display: grid; justify-items: center; text-align: center; }
+.fim h2 { font-size: clamp(56px, 8.4vw, 132px); }
+.fim .sinais { margin: 0 0 16px auto; }
+.fim-centro > .sinais i { width: 16px; height: 16px; }
+.fim-linha { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 22px; margin-top: 30px; }
+.fim-contato { text-align: left; font-size: 17px; }
+.fim-contato strong { display: block; font: 600 26px/1.1 var(--aba); color: var(--areia-clara); margin-bottom: 6px; }
+.fim-contato a { display: block; }
+.telefone { user-select: all; }
+.botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+.botao { display: inline-flex; align-items: center; min-height: 48px; padding: 10px 22px; border: 1.5px solid var(--areia); border-radius: 12px; background: none; color: var(--areia-clara); font: 500 15.5px/1.2 var(--titulo); text-decoration: none; cursor: pointer; transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .3s cubic-bezier(.2, 1.4, .4, 1); }
+.botao.cheio { background: var(--areia); color: #1b1916; }
+.botao:hover { background: var(--vermelho); border-color: var(--vermelho); color: #fff; transform: translateY(-3px); }
+.botao:active { transform: scale(.96); }
+.aviso { position: relative; z-index: 2; margin-top: 26px; font-size: 13px; color: var(--apoio); }
+
+/* Visualizador */
+dialog { width: 100vw; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(10, 10, 10, .96); color: var(--branco); }
+dialog::backdrop { background: rgba(10, 10, 10, .96); }
+dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.visor-topo { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px max(16px, var(--gutter-d)) 10px max(16px, var(--gutter-e)); font-size: 14px; }
+.visor-acoes { display: flex; gap: 6px; flex: none; }
+.visor-acoes button { min-width: 46px; height: 42px; padding-inline: 12px; border: 1px solid #55524b; border-radius: 8px; background: none; color: var(--branco); font: 500 14px/1 var(--titulo); cursor: pointer; }
+.visor-acoes button:hover { background: var(--areia); color: #1b1916; }
+.visor-imagem { min-height: 0; display: flex; justify-content: center; align-items: center; padding: 0 16px 16px; }
+.visor-imagem img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+@media (max-width: 900px) {
+  .capa { aspect-ratio: auto; min-height: 0; }
+  .capa-cena { position: relative; inset: auto; padding-top: 100vw; }
+  .capa-foto { inset: 0 0 auto; height: 100vw; background: linear-gradient(to bottom, transparent 78%, var(--carvao) 100%), url("assets/capa.webp") center top / auto 100vw no-repeat, var(--carvao); }
+  .capa::before { inset: 0 0 auto; height: 100vw; }
+  .capa-titulo { top: 50vw; font-size: 19vw; }
+  .capa-contato { position: relative; right: auto; bottom: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; padding: 10px max(16px, var(--gutter-d)) 26px max(16px, var(--gutter-e)); }
+  .capa-contato .do-logo { height: 40px; }
+  .capa-logo { display: none; }
+  .capa-titulo .ano { display: none; }
+  .sobre, .capitulo, .marca-corpo { grid-template-columns: minmax(0, 1fr); }
+  .sobre-texto { padding-bottom: 0; }
+  .sobre-foto { min-height: 0; aspect-ratio: 1.15 / 1; margin-top: 30px; }
+  .sobre-foto .recorte { right: auto; left: -6%; width: 112%; }
+  .polaroide { width: 32%; top: -4%; left: 0; }
+  .colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abas a { flex: none; margin-right: 14px; padding-right: 6px; font-size: clamp(14.5px, 4.2vw, 26px); }
+  .abas a + a { padding-left: 8px; }
+  .abas a small { display: none; }
+  .abas a::after { right: -13px; width: 18px; }
+  .abas .arquivos { display: none; }
+  .social { grid-template-columns: minmax(0, 1fr); }
+  .nichos { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 15px; }
+  .artes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filmes-grade .filme-largo { grid-column: span 6; }
+}
+@media (max-width: 480px) {
+  .filmes-grade figure { grid-column: span 3; }
+  .filmes-grade figure:nth-child(3) { grid-column: 2 / span 4; }
+  .indices { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fita div { animation: none; }
+  .quadro, .painel img, .botao, .polaroide, .abas a, .servicos h3, .ferramentas li { transition: none; }
+  .progresso { display: none; }
+}
+</style>
+
+<div class="progresso" id="progresso" aria-hidden="true"></div>
+
+<header class="capa" id="capa">
+  <div class="capa-cena" id="capaCena">
+    <div class="capa-foto" id="capaFoto"></div>
+    <div class="capa-contato" id="capaContato">
+      <img class="do-logo" src="assets/logo-simbolo.webp" width="315" height="183" alt="">
+      <a href="https://www.instagram.com/deyvisonmkt/" target="_blank" rel="noopener">@deyvisonmkt</a>
+      <a href="https://wa.me/5591992855025" target="_blank" rel="noopener">(91) 99285-5025</a>
+    </div>
+  </div>
+  <img class="capa-logo" id="capaLogo" src="assets/logo.webp" width="1067" height="183" alt="Deyvison Oliveira">
+  <div class="capa-titulo" id="capaTitulo">
+    <small>Marketing &amp; Audiovisual</small>
+    <strong class="dourado">Portfolio</strong>
+    <span class="ano">2026</span>
+    <span class="etiqueta nome-tag">Deyvison Oliveira</span>
+  </div>
+</header>
+
+<main>
+  <nav class="abas" id="social" aria-label="Capítulos">
+    <a class="ativa" href="#social" aria-current="true">Social Media<small>Posts · Carrosséis</small></a>
+    <a href="#audiovisual">Audiovisual<small>Vídeos · Reels</small></a>
+    <a href="#campanhas">Campanhas<small>Marcas · Resultados</small></a>
+    <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
+  </nav>
+
+  <section class="social quadriculado faixa">
+    <div class="social-cartao" data-sobe>
+      <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="ano">2026</span>
+      <h2 class="dourado"><span>Social</span><span>Media</span></h2>
+      <p>Cada post nasce de uma pauta, com objetivo, legenda e ação esperada definidos. A foto real da obra ou do produto entra na própria arte.</p>
+    </div>
+    <div class="mosaico" data-grupo>
+      <button class="quadro" type="button"><img src="assets/malibu/08.webp" width="900" height="1125" loading="lazy" alt="Bateria com um raio: carregador de carro elétrico na garagem."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/07.webp" width="900" height="1125" loading="lazy" alt="6× em dourado com barras comparando painel e alvenaria."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/07.webp" width="900" height="1125" loading="lazy" alt="Área de lazer vista por entre folhagens: Belém de um lado, Salinas do outro."></button>
+      <button class="quadro" type="button"><img src="assets/rf/08.webp" width="900" height="1125" loading="lazy" alt="Quadro de disjuntores em close: da fiação ao disjuntor, está tudo seguro?"></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/09.webp" width="900" height="1125" loading="lazy" alt="11× em preto sobre dourado, com comparativo de emissão de CO₂, resíduos e água."></button>
+      <button class="quadro" type="button"><img src="assets/malibu/09.webp" width="900" height="1125" loading="lazy" alt="Relógio com 24h: o gelo acabou às 23h, a conveniência não."></button>
+      <button class="quadro" type="button"><img src="assets/rf/09.webp" width="900" height="1125" loading="lazy" alt="Celular com cartão de contato, encerrando o carrossel."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/08.webp" width="900" height="1125" loading="lazy" alt="Fachada noturna com dois carros e ícones de segurança."></button>
+      <button class="quadro" type="button"><img src="assets/malibu/10.webp" width="900" height="1125" loading="lazy" alt="Ilustração de sol, mar e prancha: chegue de mãos vazias."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/09.webp" width="900" height="1125" loading="lazy" alt="Quadra de tênis entre palmeiras: sobrados de 230 m²."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/08.webp" width="900" height="1125" loading="lazy" alt="Ficha técnica do painel Lightwall com corte anotado."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/10.webp" width="900" height="1125" loading="lazy" alt="Operário na estrutura: sua próxima obra começa com uma conversa."></button>
+    </div>
+    <ul class="nichos">
+      <li data-sobe>Imobiliário</li>
+      <li data-sobe>Construção civil</li>
+      <li data-sobe>Lançamentos</li>
+      <li data-sobe>Resort</li>
+      <li data-sobe>Serviços locais</li>
+      <li data-sobe>Eventos</li>
+    </ul>
+  </section>
+
+  <nav class="abas" id="audiovisual" aria-label="Capítulos">
+    <a href="#social">Social Media<small>Posts · Carrosséis</small></a>
+    <a class="ativa" href="#audiovisual" aria-current="true">Audiovisual<small>Vídeos · Reels</small></a>
+    <a href="#campanhas">Campanhas<small>Marcas · Resultados</small></a>
+    <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
+  </nav>
+
+  <section class="filmes quadriculado faixa">
+    <h2 class="dourado" data-varre>Audiovisual</h2>
+    <p class="filmes-texto" data-sobe>Vídeos feitos para os mesmos clientes. No <a href="https://www.instagram.com/deyvisonmkt/" target="_blank" rel="noopener">Instagram</a> tem mais: drone, bastidores e cobertura de eventos.</p>
+    <div class="filmes-grade">
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/mcosta-lightwall.webp" src="assets/video/mcosta-lightwall.mp4"></video><figcaption>MCosta · Sistema Lightwall · 47 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/malibu-ia.webp" src="assets/video/malibu-ia.mp4"></video><figcaption>Malibu · Reels · 35 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1290" poster="assets/video/montecarlo-reels.webp" src="assets/video/montecarlo-reels.mp4"></video><figcaption>Monte Carlo · Reels · 62 s</figcaption></figure>
+      <figure class="filme-largo" data-sobe><video controls playsinline preload="none" width="1280" height="720" poster="assets/video/montecarlo-v01.webp" src="assets/video/montecarlo-v01.mp4"></video><figcaption>Monte Carlo · Filme do empreendimento · 87 s</figcaption></figure>
+      <figure class="filme-largo" data-sobe><video controls playsinline preload="none" width="1280" height="720" poster="assets/video/montecarlo-filme.webp" src="assets/video/montecarlo-filme.mp4"></video><figcaption>Monte Carlo · Filme · 62 s</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sobre quadriculado faixa" aria-label="Sobre">
+  <div class="sobre-texto">
+    <div class="ola"><span class="dourado" data-varre>Olá!</span><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <h1 class="dourado" data-varre><span>Eu sou</span>Deyvison Oliveira</h1>
+    <p class="sobre-intro" data-sobe>Transformo negócios com estratégias digitais e produção audiovisual. Cuido da pauta, da arte, do anúncio e do vídeo, para a campanha falar a mesma língua do feed ao outdoor.</p>
+    <div class="colunas">
+      <div>
+        <h2 class="etiqueta" data-carimbo>Ferramentas</h2>
+        <ul class="ferramentas">
+          <li data-sobe>Meta Ads</li>
+          <li data-sobe>CapCut</li>
+          <li data-sobe>Kommo</li>
+          <li data-sobe>Claude</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="etiqueta" data-carimbo>Habilidades</h2>
+        <ul>
+          <li data-sobe>Social media</li>
+          <li data-sobe>Design para feed e stories</li>
+          <li data-sobe>Tráfego pago</li>
+          <li data-sobe>Estrutura de BM</li>
+          <li data-sobe>Captação e drone</li>
+          <li data-sobe>Edição de vídeo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sobre-foto" id="sobreFoto">
+    <figure class="polaroide" id="polaroide"><img src="assets/polaroid.webp" width="624" height="720" alt="Deyvison em foto de estúdio com fundo vermelho."></figure>
+    <img class="recorte" id="recorte" src="assets/retrato-papel.webp" width="1515" height="1163" alt="Retrato de Deyvison Oliveira de blazer e camiseta pretos, recortado sobre papel.">
+  </div>
+</section>
+
+  <div class="fita" aria-hidden="true"><div>
+  <span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt="">
+</div></div>
+
+  <nav class="abas" id="campanhas" aria-label="Capítulos">
+    <a href="#social">Social Media<small>Posts · Carrosséis</small></a>
+    <a href="#audiovisual">Audiovisual<small>Vídeos · Reels</small></a>
+    <a class="ativa" href="#campanhas" aria-current="true">Campanhas<small>Marcas · Resultados</small></a>
+    <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
+  </nav>
+
+  <section class="capitulo quadriculado faixa">
+    <div>
+      <h2 class="dourado" data-varre>Campanhas</h2>
+      <p class="sub" data-sobe>Da pauta ao anúncio</p>
+      <div class="desc" data-sobe>
+        <p>Conteúdo e tráfego pago para <b>lançamentos imobiliários</b>, construção civil e serviços locais no Pará.</p>
+        <dl class="indices">
+          <div><dt>leads em Malibu e MCosta</dt><dd data-conta="108">108</dd></div>
+          <div><dt>pessoas alcançadas</dt><dd data-conta="78685">78.685</dd></div>
+          <div><dt>impressões</dt><dd data-conta="140356">140.356</dd></div>
+        </dl>
+        <p class="fonte">Relatórios do Meta Ads, 2026. Alcance e impressões somam três contas, então a mesma pessoa pode ter sido contada mais de uma vez.</p>
+      </div>
+    </div>
+    <div class="painel" id="painel">
+      <a class="logo" href="#malibu" style="background:#174745" aria-label="Ver case Malibu"><img src="assets/logos/malibu.webp" width="546" height="335" alt="Logo Malibu Praia Residence"></a>
+      <a class="span2" href="#malibu" aria-label="Ver case Malibu"><img src="assets/malibu/06.webp" alt="Rooftop do Malibu ao entardecer." loading="lazy"></a>
+      <a href="#mcosta" aria-label="Ver case MCosta"><img src="assets/mcosta/01.webp" alt="Post da MCosta com o painel em raio-x." loading="lazy"></a>
+      <a href="#montecarlo" aria-label="Ver case Monte Carlo"><img src="assets/montecarlo/01.webp" alt="Post do Monte Carlo com piscina e palmeiras." loading="lazy"></a>
+      <a class="logo" href="#mcosta" style="background:#141312" aria-label="Ver case MCosta"><img src="assets/logos/mcosta.webp" width="700" height="451" alt="Logo MCosta Incorporadora"></a>
+      <a class="span2" href="#montecarlo" aria-label="Ver case Monte Carlo"><img src="assets/montecarlo/outdoor.webp" alt="Outdoor do Monte Carlo." loading="lazy" style="object-position:center"></a>
+      <a class="span2" href="#rf" aria-label="Ver case RF"><img src="assets/rf/04.webp" alt="Post da RF Refrigeração com 36 e 18 graus." loading="lazy"></a>
+      <a class="logo" href="#montecarlo" style="background:#5f6239" aria-label="Ver case Monte Carlo"><img src="assets/logos/montecarlo.webp" width="700" height="671" alt="Logo Monte Carlo Home Resort"></a>
+      <a class="logo texto" href="#rf" style="background:#173f8e">RF Refrigeração</a>
+    </div>
+  </section>
+
+  <article class="marca malibu faixa" id="malibu">
+    <span class="pilula" data-carimbo>Campanha</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="logo-marca" src="assets/logos/malibu.webp" width="546" height="335" alt="Malibu Praia Residence">
+        <h2>Um mês de praia. Onze de porta fechada.</h2>
+        <p>Lançamento em Salinópolis, PA. Quem compra para veranear conhece a conta: o veraneio passa e o condomínio continua. A pauta partiu dessa dor para apresentar o <b>pool de locação</b>, com um calendário em que só os meses de uso ficam iluminados.</p>
+        <dl class="ficha">
+          <div><dt>leads gerados</dt><dd data-conta="71">71</dd></div>
+          <div><dt>pessoas alcançadas</dt><dd>18.908</dd></div>
+          <div><dt>impressões</dt><dd>34.123</dd></div>
+        </dl>
+        <div class="cores" aria-hidden="true"><i style="background:#174745"></i><i style="background:#2a211a"></i><i style="background:#c99a55"></i><i style="background:#efe7d8"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/malibu/04.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/malibu/01.webp" width="900" height="1125" alt="" loading="lazy">
+        <div class="celular"><img src="assets/malibu/11.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/malibu/02.webp" width="900" height="1125" loading="lazy" alt="Número 11 recortado com a fachada do prédio e a lista de contas que continuam."></button>
+      <button class="quadro" type="button"><img src="assets/malibu/03.webp" width="900" height="1125" loading="lazy" alt="Calendário do ano mostrando meses de uso e meses no pool de locação."></button>
+      <button class="quadro" type="button"><img src="assets/malibu/05.webp" width="900" height="1125" loading="lazy" alt="Capa com o prédio ao pôr do sol: seu refúgio no Atalaia e uma renda no veraneio."></button>
+      <button class="quadro" type="button"><img src="assets/malibu/07.webp" width="900" height="1125" loading="lazy" alt="Arte: não é cota, o apartamento é 100% seu."></button>
+    </div>
+  </article>
+
+  <article class="marca mcosta faixa" id="mcosta">
+    <span class="pilula" data-carimbo>Campanha</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="logo-marca" src="assets/logos/mcosta.webp" width="700" height="451" alt="MCosta Incorporadora" loading="lazy">
+        <h2>Um sistema difícil de explicar virou assunto de feed.</h2>
+        <p>Construção civil em Castanhal, PA. O painel <b>Lightwall®</b> é pouco conhecido, então cada post leva a pessoa um passo adiante, sempre com a obra real como prova.</p>
+        <ul class="funil">
+          <li><b>Alcance</b> O que tem dentro dessa parede?</li>
+          <li><b>Prova</b> Quanta parede sobe em um dia?</li>
+          <li><b>Decisão</b> Até 7× mais leve que a alvenaria.</li>
+        </ul>
+        <dl class="ficha">
+          <div><dt>leads, 1 a 19 out. 2026</dt><dd data-conta="37">37</dd></div>
+          <div><dt>pessoas alcançadas</dt><dd>11.057</dd></div>
+          <div><dt>impressões</dt><dd>26.395</dd></div>
+        </dl>
+        <div class="cores" aria-hidden="true"><i style="background:#0f0f10"></i><i style="background:#c99a2e"></i><i style="background:#f0ebe1"></i><i style="background:#1f55b8"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/mcosta/03.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/mcosta/01.webp" width="900" height="1125" alt="" loading="lazy">
+        <div class="celular"><img src="assets/mcosta/11.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/mcosta/02.webp" width="900" height="1125" loading="lazy" alt="Painéis da obra usados como barras de um gráfico: 40 a 80 m² contra 8 a 12 m²."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/04.webp" width="900" height="1125" loading="lazy" alt="Painel em close com encaixe macho-fêmea e comparativo de execução diária."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/05.webp" width="900" height="1125" loading="lazy" alt="Círculos em escala comparando 93,89 e 1,13 quilos de resíduos por metro quadrado."></button>
+      <button class="quadro" type="button"><img src="assets/mcosta/06.webp" width="900" height="1125" loading="lazy" alt="Fotos de obra coladas como em um diário, com anotações à mão."></button>
+    </div>
+  </article>
+
+  <article class="marca montecarlo faixa" id="montecarlo">
+    <span class="pilula" data-carimbo>Campanha</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="logo-marca" src="assets/logos/montecarlo.webp" width="700" height="671" alt="Monte Carlo Home Resort" loading="lazy">
+        <h2>Colocar os anúncios para rodar de novo, do feed à beira da estrada.</h2>
+        <p>Condomínio resort em Apeú, Castanhal, PA. A conta vinha de baixa entrega depois de uma troca de contato. <b>Reestruturei a BM</b> com campanhas e criativos variados para o Meta voltar a receber sinais.</p>
+        <dl class="ficha">
+          <div><dt>pessoas alcançadas</dt><dd data-conta="48720">48.720</dd></div>
+          <div><dt>impressões</dt><dd data-conta="79838">79.838</dd></div>
+          <div><dt>campanhas estruturadas</dt><dd>6</dd></div>
+        </dl>
+        <div class="cores" aria-hidden="true"><i style="background:#7a7a51"></i><i style="background:#ebe3e0"></i><i style="background:#a37359"></i><i style="background:#3e9db0"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/montecarlo/03.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/montecarlo/01.webp" width="900" height="1125" alt="" loading="lazy">
+        <div class="celular"><img src="assets/montecarlo/10.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/montecarlo/02.webp" width="900" height="1125" loading="lazy" alt="Vista aérea em mapa mostrando a posição do resort entre Belém e Salinas."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/04.webp" width="900" height="1125" loading="lazy" alt="Portaria com carro ao entardecer e cartões com as condições."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/05.webp" width="900" height="1125" loading="lazy" alt="Spa de pedra e água azul: 25 opções de lazer em um endereço."></button>
+      <button class="quadro" type="button"><img src="assets/montecarlo/06.webp" width="900" height="1125" loading="lazy" alt="Espaço gourmet com bancada de mármore: 38 m² para receber."></button>
+    </div>
+    <figure class="outdoor" data-grupo>
+      <button class="quadro" type="button" id="outdoor"><img src="assets/montecarlo/outdoor.webp" width="2400" height="800" loading="lazy" alt="Outdoor: faça o retorno, o stand de vendas fica do outro lado da rua, com rota desenhada até o stand."></button>
+      <figcaption><span>Outdoor no retorno da estrada: a rota desenhada mostra o caminho até o stand.</span><b>9 × 3 m</b></figcaption>
+    </figure>
+  </article>
+
+  <article class="marca rf faixa" id="rf">
+    <span class="pilula" data-carimbo>Social media</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="logo-texto">RF Refrigeração</p>
+        <h2>Uma assistência técnica local com cara de marca.</h2>
+        <p>Serviço local em Castanhal, PA. Carrossel de <b>nove cartões</b> para apresentar manutenção, instalação, parte elétrica e padrão de energia, com o equipamento no centro da arte e o telefone sempre à vista.</p>
+        <div class="cores" aria-hidden="true"><i style="background:#173f8e"></i><i style="background:#4a78cf"></i><i style="background:#f0f3fa"></i><i style="background:#0d2049"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/rf/02.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m3" src="assets/rf/06.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/rf/01.webp" width="900" height="1125" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/rf/03.webp" width="900" height="1125" loading="lazy" alt="Quatro cartões com os serviços: manutenção, instalação, parte elétrica e padrão de energia."></button>
+      <button class="quadro" type="button"><img src="assets/rf/04.webp" width="900" height="1125" loading="lazy" alt="Termômetro em dois cartões: 36 °C lá fora e 18 °C na sala."></button>
+      <button class="quadro" type="button"><img src="assets/rf/05.webp" width="900" height="1125" loading="lazy" alt="Lupa sobre o aparelho: ele liga, mas não gela como antes."></button>
+      <button class="quadro" type="button"><img src="assets/rf/07.webp" width="900" height="1125" loading="lazy" alt="Foto de padrão de energia em forma arredondada."></button>
+    </div>
+  </article>
+
+  <ul class="servicos quadriculado faixa" aria-label="Serviços">
+    <li data-sobe><h3 class="etiqueta">Social media</h3><p>Pauta, calendário e legenda, com objetivo definido para cada post.</p></li>
+    <li data-sobe><h3 class="etiqueta">Design</h3><p>Carrosséis, stories, posts únicos e peças impressas, como outdoor.</p></li>
+    <li data-sobe><h3 class="etiqueta">Tráfego pago</h3><p>Campanhas no Meta Ads, estruturação de BM e relatório de resultados.</p></li>
+    <li data-sobe><h3 class="etiqueta">Audiovisual</h3><p>Captação, drone e edição de reels e filmes para marcas e eventos.</p></li>
+  </ul>
+</main>
+
+<div class="fita" aria-hidden="true"><div>
+  <span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt=""><span>Portfolio</span><img class="do-logo" src="assets/logo-simbolo-escuro.webp" width="315" height="183" alt="">
+</div></div>
+
+<footer class="fim faixa" id="contato">
+  <div class="fim-centro">
+    <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h2 class="etiqueta" data-carimbo>Obrigado!</h2>
+    <div class="fim-linha" data-sobe>
+      <img class="fim-logo" src="assets/logo.webp" width="1067" height="183" alt="Deyvison Oliveira" loading="lazy">
+      <div class="fim-contato">
+        <strong>Fale comigo</strong>
+        <span class="telefone" id="telefone">(91) 99285-5025</span>
+        <a href="https://www.instagram.com/deyvisonmkt/" target="_blank" rel="noopener">instagram.com/deyvisonmkt</a>
+      </div>
+    </div>
+    <div class="botoes" data-sobe>
+      <a class="botao cheio" href="https://wa.me/5591992855025" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <button class="botao" type="button" id="copiar">Copiar número</button>
+    </div>
+    <p class="aviso">Imagens de empreendimentos são ilustrativas. As marcas pertencem aos seus donos.</p>
+  </div>
+</footer>
+
+<dialog id="visor" aria-label="Arte ampliada">
+  <div class="visor-topo">
+    <span id="visor-legenda"></span>
+    <div class="visor-acoes">
+      <button type="button" id="visor-antes" aria-label="Arte anterior">&larr;</button>
+      <button type="button" id="visor-depois" aria-label="Próxima arte">&rarr;</button>
+      <button type="button" id="visor-fechar">Fechar</button>
+    </div>
+  </div>
+  <div class="visor-imagem"><img id="visor-img" alt=""></div>
+</dialog>
+
+<script>
+(function () {
+  var calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mouse = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var estreito = matchMedia('(max-width: 900px)');
+  var saida = 'cubic-bezier(.16, 1, .3, 1)';
+  var mola = 'cubic-bezier(.2, 1.5, .35, 1)';
+  function anima(el, quadros, opcoes) {
+    if (calmo || !el.animate) return;
+    opcoes.easing = opcoes.easing || saida;
+    opcoes.fill = 'backwards';
+    el.animate(quadros, opcoes);
+  }
+
+  /* Visualizador */
+  var visor = document.getElementById('visor');
+  var img = document.getElementById('visor-img');
+  var legenda = document.getElementById('visor-legenda');
+  var grupo = [];
+  var atual = 0;
+  var direcao = 0;
+
+  function mostrar(i) {
+    atual = (i + grupo.length) % grupo.length;
+    var origem = grupo[atual].querySelector('img');
+    img.src = origem.src;
+    img.alt = origem.alt;
+    legenda.textContent = origem.alt;
+    anima(img, [
+      { opacity: 0, transform: 'translateX(' + direcao * 40 + 'px) scale(' + (direcao ? 1 : .94) + ')' },
+      { opacity: 1, transform: 'none' }
+    ], { duration: 420 });
+  }
+
+  document.querySelectorAll('.quadro').forEach(function (botao) {
+    botao.addEventListener('click', function () {
+      grupo = Array.prototype.slice.call(botao.closest('[data-grupo]').querySelectorAll('.quadro'));
+      direcao = 0;
+      mostrar(grupo.indexOf(botao));
+      visor.showModal();
+    });
+  });
+
+  function passo(d) { direcao = d; mostrar(atual + d); }
+  document.getElementById('visor-antes').addEventListener('click', function () { passo(-1); });
+  document.getElementById('visor-depois').addEventListener('click', function () { passo(1); });
+  document.getElementById('visor-fechar').addEventListener('click', function () { visor.close(); });
+  visor.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') passo(-1);
+    if (e.key === 'ArrowRight') passo(1);
+  });
+
+  /* Um vídeo por vez */
+  document.querySelectorAll('.filmes-grade video').forEach(function (v, _, todos) {
+    v.addEventListener('play', function () { todos.forEach(function (o) { if (o !== v) o.pause(); }); });
+  });
+
+  /* Copiar número */
+  var copiar = document.getElementById('copiar');
+  copiar.addEventListener('click', function () {
+    var numero = document.getElementById('telefone').textContent;
+    function selecionar() {
+      var faixa = document.createRange();
+      faixa.selectNodeContents(document.getElementById('telefone'));
+      var selecao = window.getSelection();
+      selecao.removeAllRanges();
+      selecao.addRange(faixa);
+      copiar.textContent = 'Número selecionado';
+    }
+    if (!navigator.clipboard) { selecionar(); return; }
+    navigator.clipboard.writeText(numero).then(function () { copiar.textContent = 'Número copiado'; }, selecionar);
+  });
+
+  if (calmo) return;
+
+  var varrer = [{ clipPath: 'inset(-10% 100% -15% -5%)' }, { clipPath: 'inset(-10% -5% -15% -5%)' }];
+
+  /* Entrada da capa */
+  var capa = document.getElementById('capa');
+  var cena = document.getElementById('capaCena');
+  var foto = document.getElementById('capaFoto');
+  var titulo = document.getElementById('capaTitulo');
+  anima(foto, [{ opacity: 0, transform: 'scale(1.14)' }, { opacity: 1, transform: 'none' }], { duration: 1700 });
+  anima(titulo.querySelector('small'), [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 450 });
+  anima(titulo.querySelector('strong'), varrer, { duration: 1300, delay: 550, easing: 'cubic-bezier(.65, 0, .2, 1)' });
+  ['::before', '::after'].forEach(function (p) {
+    if (calmo || !titulo.animate) return;
+    titulo.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 800, delay: 1200, fill: 'backwards', pseudoElement: p });
+  });
+  anima(titulo.querySelector('.ano'), [{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 1500 });
+  anima(titulo.querySelector('.nome-tag'), [{ opacity: 0, transform: 'scale(1.9) rotate(-12deg)', offset: 0 }], { duration: 560, delay: 1450, easing: mola });
+  anima(document.getElementById('capaLogo'), [{ opacity: 0, transform: 'translateY(-16px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: 300 });
+  Array.prototype.forEach.call(document.getElementById('capaContato').children, function (el, i) {
+    anima(el, [{ opacity: 0, transform: 'translateX(14px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 1500 + i * 120 });
+  });
+
+  /* Revelações ao rolar. Os elementos ficam visíveis até a animação começar. */
+  function aoEntrar(el, acao) {
+    var obs = new IntersectionObserver(function (itens) {
+      itens.forEach(function (item) {
+        if (!item.isIntersecting) return;
+        obs.unobserve(item.target);
+        acao(item.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    obs.observe(el);
+  }
+  function ordem(el, seletor) {
+    return Array.prototype.filter.call(el.parentNode.children, function (o) { return o.matches(seletor); }).indexOf(el);
+  }
+
+  document.querySelectorAll('[data-sobe]').forEach(function (el) {
+    var n = ordem(el, '[data-sobe]');
+    aoEntrar(el, function () {
+      anima(el, [{ opacity: 0, translate: '0 30px' }, { opacity: 1, translate: '0 0' }], { duration: 850, delay: n * 80 });
+    });
+  });
+  document.querySelectorAll('[data-varre]').forEach(function (el) {
+    aoEntrar(el, function () { anima(el, varrer, { duration: 1150, easing: 'cubic-bezier(.65, 0, .2, 1)' }); });
+  });
+  document.querySelectorAll('[data-carimbo]').forEach(function (el) {
+    aoEntrar(el, function () {
+      anima(el, [{ opacity: 0, scale: '1.8', rotate: '-8deg' }, { opacity: 1, scale: '1', rotate: '0deg' }], { duration: 520, easing: mola });
+    });
+  });
+  document.querySelectorAll('.sinais').forEach(function (s) {
+    aoEntrar(s, function () {
+      Array.prototype.forEach.call(s.children, function (b, i) {
+        anima(b, [{ transform: 'scale(0)' }, { transform: 'scale(1)' }], { duration: 480, delay: 120 + i * 90, easing: mola });
+      });
+    });
+  });
+  document.querySelectorAll('.cores').forEach(function (s) {
+    aoEntrar(s, function () {
+      Array.prototype.forEach.call(s.children, function (b, i) {
+        anima(b, [{ transform: 'scale(0)' }, { transform: 'scale(1)' }], { duration: 480, delay: i * 80, easing: mola });
+      });
+    });
+  });
+  document.querySelectorAll('.abas').forEach(function (nav) {
+    aoEntrar(nav, function () {
+      Array.prototype.forEach.call(nav.querySelectorAll('a, .arquivos'), function (a, i) {
+        anima(a, [{ translate: '0 110%' }, { translate: '0 0' }], { duration: 750, delay: i * 90 });
+      });
+    });
+  });
+
+  /* Painel de capítulo vira peça por peça */
+  var pecas = document.querySelectorAll('#painel > a');
+  aoEntrar(document.getElementById('painel'), function () {
+    pecas.forEach(function (p, i) {
+      anima(p, [{ opacity: 0, transform: 'rotateY(-70deg)', transformOrigin: '0 50%' }, { opacity: 1, transform: 'none', transformOrigin: '0 50%' }], { duration: 850, delay: i * 70 });
+    });
+  });
+
+  /* Maquetes se abrem em leque */
+  document.querySelectorAll('.maquete').forEach(function (m) {
+    aoEntrar(m, function () {
+      Array.prototype.forEach.call(m.children, function (p, i) {
+        anima(p, [{ opacity: 0, transform: 'translate(' + (m.children.length === 3 && p.classList.contains('m1') ? '45%' : '-10%') + ',18%) rotate(0deg) scale(.9)', offset: 0 }], { duration: 1150, delay: i * 130 });
+      });
+    });
+  });
+
+  /* Artes e mosaico */
+  document.querySelectorAll('.artes').forEach(function (g) {
+    aoEntrar(g, function () {
+      Array.prototype.forEach.call(g.children, function (q, i) {
+        anima(q, [{ opacity: 0, translate: '0 60px', rotate: (i % 2 ? '2deg' : '-2deg') }, { opacity: 1, translate: '0 0', rotate: '0deg' }], { duration: 900, delay: i * 90 });
+      });
+    });
+  });
+  document.querySelectorAll('.mosaico').forEach(function (g) {
+    aoEntrar(g, function () {
+      Array.prototype.forEach.call(g.children, function (q, i) {
+        anima(q, [{ opacity: 0, scale: '.82' }, { opacity: 1, scale: '1' }], { duration: 650, delay: i * 55, easing: mola });
+      });
+    });
+  });
+  var outdoor = document.getElementById('outdoor');
+  aoEntrar(outdoor, function () {
+    anima(outdoor, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0 0 0)' }], { duration: 1500, easing: 'cubic-bezier(.65, 0, .2, 1)' });
+  });
+
+  /* Retrato e polaroide */
+  var recorte = document.getElementById('recorte');
+  var polaroide = document.getElementById('polaroide');
+  aoEntrar(document.getElementById('sobreFoto'), function () {
+    anima(recorte, [{ opacity: 0, translate: '0 12%' }, { opacity: 1, translate: '0 0' }], { duration: 1200 });
+    anima(polaroide, [{ opacity: 0, translate: '-40% -70%', rotate: '-22deg' }, { opacity: 1, translate: '0 0', rotate: '0deg' }], { duration: 950, delay: 450, easing: mola });
+  });
+
+  /* Contadores */
+  document.querySelectorAll('[data-conta]').forEach(function (dd) {
+    aoEntrar(dd, function () {
+      var fim = Number(dd.dataset.conta);
+      var inicio = performance.now();
+      (function quadro(agora) {
+        var k = Math.min((agora - inicio) / 1500, 1);
+        dd.textContent = Math.round(fim * (1 - Math.pow(1 - k, 4))).toLocaleString('pt-BR');
+        if (k < 1) requestAnimationFrame(quadro);
+      })(inicio);
+    });
+  });
+
+  /* Movimento contínuo: cursor, rolagem e velocidade da fita */
+  var progresso = document.getElementById('progresso');
+  var maquetes = Array.prototype.slice.call(document.querySelectorAll('.maquete'));
+  var fitas = [];
+  document.querySelectorAll('.fita div').forEach(function (f) { if (f.getAnimations) fitas = fitas.concat(f.getAnimations()); });
+  var mx = 0, my = 0, sx = 0, sy = 0, ultimoY = scrollY, vel = 0;
+  if (mouse) {
+    addEventListener('pointermove', function (e) {
+      mx = e.clientX / innerWidth - .5;
+      my = e.clientY / innerHeight - .5;
+    }, { passive: true });
+  }
+  function laco() {
+    var y = scrollY, altura = capa.offsetHeight;
+    var total = document.documentElement.scrollHeight - innerHeight;
+    progresso.style.transform = 'scaleX(' + (total > 0 ? y / total : 0) + ')';
+    sx += (mx - sx) * .07;
+    sy += (my - sy) * .07;
+    vel += (Math.abs(y - ultimoY) - vel) * .1;
+    ultimoY = y;
+    fitas.forEach(function (a) { a.playbackRate = 1 + Math.min(vel * .45, 7); });
+    if (y < altura) {
+      var alvo = estreito.matches ? foto : cena;
+      alvo.style.transform = 'translate3d(' + (-sx * 22).toFixed(1) + 'px,' + (y * (estreito.matches ? .22 : .06) - sy * 14).toFixed(1) + 'px,0) scale(' + (1 + y / altura * .05).toFixed(4) + ')';
+      titulo.style.translate = (sx * 18).toFixed(1) + 'px ' + (-y * .12 + sy * 10).toFixed(1) + 'px';
+    }
+    var r = polaroide.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < innerHeight) {
+      polaroide.style.translate = (sx * 12).toFixed(1) + 'px ' + (((r.top + r.height / 2) / innerHeight - .5) * 40).toFixed(1) + 'px';
+      recorte.style.translate = (-sx * 10).toFixed(1) + 'px 0';
+    }
+    maquetes.forEach(function (m) {
+      var q = m.getBoundingClientRect();
+      if (q.bottom < 0 || q.top > innerHeight) return;
+      var meio = (q.top + q.height / 2) / innerHeight - .5;
+      Array.prototype.forEach.call(m.children, function (p, i) {
+        var f = .6 + i * .55;
+        p.style.translate = (sx * 22 * f).toFixed(1) + 'px ' + (meio * 34 * f + sy * 14 * f).toFixed(1) + 'px';
+      });
+    });
+    requestAnimationFrame(laco);
+  }
+  requestAnimationFrame(laco);
+})();
+</script>
