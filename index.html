@@ -117,7 +117,6 @@ img { max-width: 100%; }
 .indices dd { font: 800 clamp(30px, 3.3vw, 50px)/1 var(--titulo); letter-spacing: -.04em; color: var(--areia); font-variant-numeric: tabular-nums; }
 .indices dt { margin-top: 4px; font-size: 13.5px; line-height: 1.3; color: var(--apoio); }
 .indices div { display: flex; flex-direction: column-reverse; justify-content: flex-end; min-width: 0; }
-.fonte { margin-top: 14px; font-size: 13px; color: var(--apoio); }
 .painel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(110px, 12.4vw, 190px); perspective: 1200px; }
 .painel a { position: relative; display: block; overflow: hidden; }
 .painel img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .45s cubic-bezier(.2, .9, .3, 1); }
@@ -137,6 +136,7 @@ img { max-width: 100%; }
 .passos h3 { margin-top: 12px; font: 700 clamp(22px, 1.9vw, 27px)/1.1 var(--titulo); letter-spacing: -.02em; color: var(--areia-clara); }
 .passos p { margin-top: 8px; font-size: 15.5px; color: #dcd8cd; }
 .funil-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 22px; font: 600 clamp(18px, 1.8vw, 25px)/1.2 var(--aba); }
+.metodo-cta { margin-top: 22px; }
 .funil-linha i { font-style: normal; color: var(--areia-escura); }
 .funil-linha b { padding: .1em .45em .14em; background: var(--vermelho); color: #fff; border-radius: .14em; font-weight: 700; }
 
@@ -411,10 +411,9 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <p>Ajudo empresas a <b>entrar no tráfego pago</b> e a transformar anúncio em contato e venda. Monto a estrutura no Meta Ads, crio os criativos, testo públicos e abordagens e coloco a verba no que traz resultado.</p>
         <dl class="indices">
           <div><dt>leads em Malibu e MCosta</dt><dd data-conta="108">108</dd></div>
-          <div><dt>pessoas alcançadas</dt><dd data-conta="78685">78.685</dd></div>
-          <div><dt>impressões</dt><dd data-conta="140356">140.356</dd></div>
+          <div><dt>de alcance somado</dt><dd data-conta="78685">78.685</dd></div>
+          <div><dt>impressões somadas</dt><dd data-conta="140356">140.356</dd></div>
         </dl>
-        <p class="fonte">Relatórios do Meta Ads, 2026. Alcance e impressões somam três contas, então a mesma pessoa pode ter sido contada mais de uma vez.</p>
       </div>
     </div>
     <div class="painel" id="painel">
@@ -439,6 +438,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
       <li data-sobe><span class="etiqueta">4</span><h3>Escala</h3><p>Corto o que não responde e concentro a verba no que traz contatos com intenção de compra. É aí que as vendas ganham ritmo.</p></li>
     </ol>
     <p class="funil-linha" data-sobe aria-label="O que eu acompanho: alcance, impressões, cliques, contatos, leads e vendas"><span>Alcance</span><i>→</i><span>Impressões</span><i>→</i><span>Cliques</span><i>→</i><span>Contatos</span><i>→</i><span>Leads</span><i>→</i><b>Vendas</b></p>
+    <a class="botao cheio metodo-cta" href="https://wa.me/5591992855025" target="_blank" rel="noopener" data-sobe>Quero vender com tráfego pago</a>
   </section>
 
   <article class="marca malibu faixa" id="malibu">
@@ -451,7 +451,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <dl class="caso">
           <div><dt>Desafio</dt><dd>Abrir o pré-lançamento em Salinópolis, PA, e formar uma base de interessados para o time comercial.</dd></div>
           <div><dt>Estratégia</dt><dd>Anúncios de geração de leads a partir de uma dor real: quem compra para veranear usa o imóvel um mês e paga as contas o ano todo. A resposta é o <b>pool de locação</b>. A frequência ficou em 1,80, sem cansar o mesmo público.</dd></div>
-          <div><dt>Resultado</dt><dd>71 pessoas interessadas entraram no funil comercial, com dados para otimizar públicos e criativos nas próximas etapas.</dd></div>
+          <div><dt>Resultado</dt><dd>71 pessoas interessadas no funil comercial, ainda no pré-lançamento.</dd></div>
         </dl>
         <dl class="ficha">
           <div><dt>leads gerados</dt><dd data-conta="71">71</dd></div>
@@ -484,7 +484,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <dl class="caso">
           <div><dt>Desafio</dt><dd>Colocar a incorporadora de Castanhal, PA, para gerar contatos com anúncios, vendendo um sistema pouco conhecido, o painel <b>Lightwall®</b>.</dd></div>
           <div><dt>Estratégia</dt><dd>Três campanhas de geração de leads, com a maior parte da verba na que entregava mais alcance. O conteúdo leva a pessoa um passo de cada vez, sempre com a obra real como prova.</dd></div>
-          <div><dt>Resultado</dt><dd>37 novos contatos em 19 dias, formando a base para identificar quais anúncios e públicos trazem as melhores oportunidades.</dd></div>
+          <div><dt>Resultado</dt><dd>37 novos contatos em 19 dias, já na largada dos anúncios.</dd></div>
         </dl>
         <ul class="funil">
           <li><b>Alcance</b> O que tem dentro dessa parede?</li>
@@ -522,7 +522,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <dl class="caso">
           <div><dt>Desafio</dt><dd>A conta do condomínio em Apeú, Castanhal, PA, vinha de baixa entrega depois de uma troca de contato, e o Meta tinha dificuldade para encontrar quem responderia aos anúncios.</dd></div>
           <div><dt>Estratégia</dt><dd><b>Reestruturei a BM</b> com seis campanhas e criativos variados, em vez de concentrar tudo em um anúncio, para o Meta voltar a receber sinais. O outdoor reforça a oferta na estrada.</dd></div>
-          <div><dt>Resultado</dt><dd>A distribuição voltou: quase 49 mil pessoas alcançadas. O próximo passo é concentrar a verba nas campanhas que trazem mais contatos.</dd></div>
+          <div><dt>Resultado</dt><dd>Conta de volta ao jogo: quase 49 mil pessoas alcançadas e seis campanhas no ar.</dd></div>
         </dl>
         <dl class="ficha">
           <div><dt>pessoas alcançadas</dt><dd data-conta="48720">48.720</dd></div>
