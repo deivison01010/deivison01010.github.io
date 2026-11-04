@@ -136,9 +136,28 @@ img { max-width: 100%; }
 .passos h3 { margin-top: 12px; font: 700 clamp(22px, 1.9vw, 27px)/1.1 var(--titulo); letter-spacing: -.02em; color: var(--areia-clara); }
 .passos p { margin-top: 8px; font-size: 15.5px; color: #dcd8cd; }
 .funil-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 22px; font: 600 clamp(18px, 1.8vw, 25px)/1.2 var(--aba); }
-.metodo-cta { margin-top: 22px; }
 .funil-linha i { font-style: normal; color: var(--areia-escura); }
 .funil-linha b { padding: .1em .45em .14em; background: var(--vermelho); color: #fff; border-radius: .14em; font-weight: 700; }
+
+/* Simulador */
+.conversao { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 32px clamp(28px, 5vw, 72px); align-items: center; padding-block: 0 clamp(44px, 6vw, 84px); }
+.conversao-texto { min-width: 0; display: grid; gap: 12px; }
+.conversao-texto h2 { font: 800 clamp(36px, 4.6vw, 72px)/1.02 var(--titulo); letter-spacing: -.04em; padding-bottom: .08em; }
+.conversao-frase { margin-top: 8px; padding-left: 16px; border-left: 3px solid var(--vermelho); font: 700 clamp(21px, 2vw, 28px)/1.2 var(--titulo); letter-spacing: -.02em; color: var(--areia-clara); }
+.conversao-frase b { color: #fff; }
+.simulador { min-width: 0; display: grid; gap: 16px; padding: clamp(18px, 2.2vw, 30px); background: var(--carvao-2); border: 1.5px solid rgba(220, 196, 150, .5); border-radius: 26px; }
+.simulador-topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 14px; font-size: 14px; color: var(--apoio); }
+.simulador-topo .etiqueta { font-size: 22px; }
+.campo { display: grid; grid-template-columns: minmax(0, 1fr) 132px; gap: 6px 12px; align-items: center; }
+.campo label { font-weight: 500; font-size: 16px; }
+.campo input[type="number"] { width: 100%; min-height: 44px; padding: 8px 10px; background: var(--carvao); border: 1.5px solid rgba(220, 196, 150, .5); border-radius: 10px; color: var(--branco); font: 700 18px/1.2 var(--titulo); font-variant-numeric: tabular-nums; text-align: right; }
+.campo input[type="range"] { grid-column: 1 / -1; width: 100%; height: 26px; margin: 0; accent-color: var(--vermelho); cursor: grab; }
+.simulador-saida { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 10px; padding-top: 16px; border-top: 1px dashed rgba(255, 255, 255, .3); }
+.simulador-saida div { min-width: 0; display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+.simulador-saida dt { margin-top: 4px; font-size: 14px; color: var(--apoio); }
+.simulador-saida dd { font: 800 clamp(26px, 3vw, 44px)/1.05 var(--titulo); letter-spacing: -.03em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; color: var(--areia); }
+.simulador-saida .destaque dd { color: #fff; }
+.simulador .botao { justify-content: center; }
 
 /* Marcas */
 .marca { position: relative; padding-block: clamp(40px, 5vw, 72px) clamp(44px, 6vw, 84px); overflow: hidden; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 44px 44px; }
@@ -260,6 +279,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   .abas a::after { right: -13px; width: 18px; }
   .abas .arquivos { display: none; }
   .passos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .conversao { grid-template-columns: minmax(0, 1fr); }
   .social { grid-template-columns: minmax(0, 1fr); }
   .nichos { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 15px; }
   .artes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -438,7 +458,39 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
       <li data-sobe><span class="etiqueta">4</span><h3>Escala</h3><p>Corto o que não responde e concentro a verba no que traz contatos com intenção de compra. É aí que as vendas ganham ritmo.</p></li>
     </ol>
     <p class="funil-linha" data-sobe aria-label="O que eu acompanho: alcance, impressões, cliques, contatos, leads e vendas"><span>Alcance</span><i>→</i><span>Impressões</span><i>→</i><span>Cliques</span><i>→</i><span>Contatos</span><i>→</i><span>Leads</span><i>→</i><b>Vendas</b></p>
-    <a class="botao cheio metodo-cta" href="https://wa.me/5591992855025" target="_blank" rel="noopener" data-sobe>Quero vender com tráfego pago</a>
+  </section>
+
+  <section class="conversao quadriculado faixa" id="simulador" aria-labelledby="titulo-simulador">
+    <div class="conversao-texto">
+      <h2 class="dourado" id="titulo-simulador" data-varre>Quantas vendas podem estar passando?</h2>
+      <p data-sobe>Você já parou para pensar em quantas oportunidades de vendas sua empresa pode estar deixando passar?</p>
+      <p data-sobe>Com uma estratégia de marketing bem estruturada, podemos atrair potenciais clientes, gerar contatos e criar oportunidades comerciais.</p>
+      <p data-sobe>Faça uma simulação e descubra como diferentes taxas de conversão podem impactar o seu negócio.</p>
+      <p class="conversao-frase" data-sobe>Marketing não é apenas gerar visualizações. <b>É criar oportunidades de negócio.</b></p>
+    </div>
+    <form class="simulador" id="simulacao" data-sobe aria-label="Simulador de conversão">
+      <div class="simulador-topo"><span class="etiqueta">Conversão</span><span>Simulação com os seus valores</span></div>
+      <div class="campo">
+        <label for="simLeads">Leads</label>
+        <input id="simLeads" type="number" inputmode="numeric" min="0" max="100000" step="1" value="100">
+        <input id="simLeadsFaixa" type="range" min="10" max="2000" step="10" value="100" aria-label="Ajustar leads">
+      </div>
+      <div class="campo">
+        <label for="simTaxa">Taxa de conversão (%)</label>
+        <input id="simTaxa" type="number" inputmode="decimal" min="0" max="100" step="0.5" value="5">
+        <input id="simTaxaFaixa" type="range" min="0.5" max="30" step="0.5" value="5" aria-label="Ajustar taxa de conversão">
+      </div>
+      <div class="campo">
+        <label for="simTicket">Ticket médio (R$)</label>
+        <input id="simTicket" type="number" inputmode="decimal" min="0" max="100000000" step="10" value="500">
+        <input id="simTicketFaixa" type="range" min="50" max="10000" step="50" value="500" aria-label="Ajustar ticket médio">
+      </div>
+      <dl class="simulador-saida" aria-live="polite">
+        <div><dt>Vendas estimadas</dt><dd id="simVendas">5,0</dd></div>
+        <div class="destaque"><dt>Faturamento potencial</dt><dd id="simFaturamento">R$&nbsp;2.500,00</dd></div>
+      </dl>
+      <a class="botao cheio" href="https://wa.me/5591992855025" target="_blank" rel="noopener">Quero vender com tráfego pago</a>
+    </form>
   </section>
 
   <article class="marca malibu faixa" id="malibu">
@@ -673,6 +725,35 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   document.querySelectorAll('.filmes-grade video').forEach(function (v, _, todos) {
     v.addEventListener('play', function () { todos.forEach(function (o) { if (o !== v) o.pause(); }); });
   });
+
+  /* Simulador de conversão */
+  (function () {
+    var formulario = document.getElementById('simulacao');
+    var vendasSaida = document.getElementById('simVendas');
+    var faturamentoSaida = document.getElementById('simFaturamento');
+    var campos = ['Leads', 'Taxa', 'Ticket'].map(function (n) {
+      return { numero: document.getElementById('sim' + n), faixa: document.getElementById('sim' + n + 'Faixa') };
+    });
+    var moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    var decimal = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    function valor(c) {
+      var v = parseFloat(c.numero.value);
+      if (isNaN(v) || v < 0) return 0;
+      return Math.min(v, parseFloat(c.numero.max));
+    }
+    function calcula() {
+      var vendas = valor(campos[0]) * valor(campos[1]) / 100;
+      vendasSaida.textContent = decimal.format(vendas);
+      faturamentoSaida.textContent = moeda.format(vendas * valor(campos[2]));
+    }
+    campos.forEach(function (c) {
+      c.numero.addEventListener('input', function () { c.faixa.value = valor(c); calcula(); });
+      c.numero.addEventListener('blur', function () { c.numero.value = valor(c); c.faixa.value = valor(c); calcula(); });
+      c.faixa.addEventListener('input', function () { c.numero.value = c.faixa.value; calcula(); });
+    });
+    formulario.addEventListener('submit', function (e) { e.preventDefault(); });
+    calcula();
+  })();
 
   /* Copiar número */
   var copiar = document.getElementById('copiar');
