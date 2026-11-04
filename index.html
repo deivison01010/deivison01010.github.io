@@ -127,6 +127,19 @@ img { max-width: 100%; }
 .painel .logo.texto { font: 700 clamp(14px, 1.65vw, 26px)/1.05 var(--titulo); letter-spacing: -.02em; padding: 6%; text-decoration: none; text-align: center; color: #fff; }
 .span2 { grid-column: span 2; }
 
+/* Método */
+.metodo { padding-block: 0 clamp(44px, 6vw, 84px); }
+.metodo > h2 { font: 800 clamp(36px, 4.6vw, 72px)/1.02 var(--titulo); letter-spacing: -.04em; padding-bottom: .08em; }
+.passos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 24px 0 0; padding: 0; list-style: none; }
+.passos li { min-width: 0; padding: 18px 20px 22px; border: 1px solid rgba(220, 196, 150, .42); border-radius: 18px; transition: border-color .25s ease, background-color .25s ease; }
+.passos li:hover { border-color: var(--areia); background: rgba(220, 196, 150, .06); }
+.passos .etiqueta { font-size: 20px; }
+.passos h3 { margin-top: 12px; font: 700 clamp(22px, 1.9vw, 27px)/1.1 var(--titulo); letter-spacing: -.02em; color: var(--areia-clara); }
+.passos p { margin-top: 8px; font-size: 15.5px; color: #dcd8cd; }
+.funil-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 22px; font: 600 clamp(18px, 1.8vw, 25px)/1.2 var(--aba); }
+.funil-linha i { font-style: normal; color: var(--areia-escura); }
+.funil-linha b { padding: .1em .45em .14em; background: var(--vermelho); color: #fff; border-radius: .14em; font-weight: 700; }
+
 /* Marcas */
 .marca { position: relative; padding-block: clamp(40px, 5vw, 72px) clamp(44px, 6vw, 84px); overflow: hidden; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 44px 44px; }
 .malibu { background-color: #174745; }
@@ -145,6 +158,9 @@ img { max-width: 100%; }
 .ficha div { display: flex; flex-direction: column-reverse; }
 .ficha dd { font: 800 clamp(30px, 3vw, 42px)/1 var(--titulo); letter-spacing: -.04em; color: var(--areia); font-variant-numeric: tabular-nums; }
 .ficha dt { margin-top: 3px; font-size: 13px; color: var(--apoio); }
+.caso { display: grid; gap: 11px; margin-top: 10px; font-size: 15px; line-height: 1.42; }
+.caso dt { font: 600 13px/1.2 var(--aba); letter-spacing: .08em; text-transform: uppercase; color: var(--areia); }
+.caso dd { margin-top: 2px; }
 .funil { display: grid; gap: 4px; margin-top: 14px; font-size: 14.5px; }
 .funil b { display: inline-block; min-width: 4.6em; color: var(--areia); }
 .cores { display: flex; gap: 7px; margin-top: 18px; }
@@ -243,6 +259,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   .abas a small { display: none; }
   .abas a::after { right: -13px; width: 18px; }
   .abas .arquivos { display: none; }
+  .passos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .social { grid-template-columns: minmax(0, 1fr); }
   .nichos { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 15px; }
   .artes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -253,6 +270,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   .filmes-grade figure { grid-column: span 3; }
   .filmes-grade figure:nth-child(3) { grid-column: 2 / span 4; }
   .indices { grid-template-columns: minmax(0, 1fr); }
+  .passos { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -388,9 +406,9 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   <section class="capitulo quadriculado faixa">
     <div>
       <h2 class="dourado" data-varre>Campanhas</h2>
-      <p class="sub" data-sobe>Da pauta ao anúncio</p>
+      <p class="sub" data-sobe>Do primeiro anúncio às vendas</p>
       <div class="desc" data-sobe>
-        <p>Conteúdo e tráfego pago para <b>lançamentos imobiliários</b>, construção civil e serviços locais no Pará.</p>
+        <p>Ajudo empresas a <b>entrar no tráfego pago</b> e a transformar anúncio em contato e venda. Monto a estrutura no Meta Ads, crio os criativos, testo públicos e abordagens e coloco a verba no que traz resultado.</p>
         <dl class="indices">
           <div><dt>leads em Malibu e MCosta</dt><dd data-conta="108">108</dd></div>
           <div><dt>pessoas alcançadas</dt><dd data-conta="78685">78.685</dd></div>
@@ -412,6 +430,17 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
     </div>
   </section>
 
+  <section class="metodo quadriculado faixa" aria-labelledby="titulo-metodo">
+    <h2 class="dourado" id="titulo-metodo" data-varre>Como faço o tráfego virar venda</h2>
+    <ol class="passos">
+      <li data-sobe><span class="etiqueta">1</span><h3>Estrutura</h3><p>Organizo a BM e a conta de anúncios e defino para onde o contato vai. Serve para quem nunca anunciou e para quem precisa reconstruir uma conta parada.</p></li>
+      <li data-sobe><span class="etiqueta">2</span><h3>Oferta e criativo</h3><p>Transformo o argumento de venda em peças que falam com a dor do cliente. Arte, vídeo e anúncio saem da mesma estratégia.</p></li>
+      <li data-sobe><span class="etiqueta">3</span><h3>Testes</h3><p>Rodo públicos, abordagens e criativos diferentes, em vez de apostar toda a verba em um único anúncio. Assim o Meta recebe dados para encontrar quem tem mais chance de responder.</p></li>
+      <li data-sobe><span class="etiqueta">4</span><h3>Escala</h3><p>Corto o que não responde e concentro a verba no que traz contatos com intenção de compra. É aí que as vendas ganham ritmo.</p></li>
+    </ol>
+    <p class="funil-linha" data-sobe aria-label="O que eu acompanho: alcance, impressões, cliques, contatos, leads e vendas"><span>Alcance</span><i>→</i><span>Impressões</span><i>→</i><span>Cliques</span><i>→</i><span>Contatos</span><i>→</i><span>Leads</span><i>→</i><b>Vendas</b></p>
+  </section>
+
   <article class="marca malibu faixa" id="malibu">
     <span class="pilula" data-carimbo>Campanha</span>
     <div class="marca-corpo">
@@ -419,7 +448,11 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
         <img class="logo-marca" src="assets/logos/malibu.webp" width="546" height="335" alt="Malibu Praia Residence">
         <h2>Um mês de praia. Onze de porta fechada.</h2>
-        <p>Lançamento em Salinópolis, PA. Quem compra para veranear conhece a conta: o veraneio passa e o condomínio continua. A pauta partiu dessa dor para apresentar o <b>pool de locação</b>, com um calendário em que só os meses de uso ficam iluminados.</p>
+        <dl class="caso">
+          <div><dt>Desafio</dt><dd>Abrir o pré-lançamento em Salinópolis, PA, e formar uma base de interessados para o time comercial.</dd></div>
+          <div><dt>Estratégia</dt><dd>Anúncios de geração de leads a partir de uma dor real: quem compra para veranear usa o imóvel um mês e paga as contas o ano todo. A resposta é o <b>pool de locação</b>. A frequência ficou em 1,80, sem cansar o mesmo público.</dd></div>
+          <div><dt>Resultado</dt><dd>71 pessoas interessadas entraram no funil comercial, com dados para otimizar públicos e criativos nas próximas etapas.</dd></div>
+        </dl>
         <dl class="ficha">
           <div><dt>leads gerados</dt><dd data-conta="71">71</dd></div>
           <div><dt>pessoas alcançadas</dt><dd>18.908</dd></div>
@@ -448,7 +481,11 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
         <img class="logo-marca" src="assets/logos/mcosta.webp" width="700" height="451" alt="MCosta Incorporadora" loading="lazy">
         <h2>Um sistema difícil de explicar virou assunto de feed.</h2>
-        <p>Construção civil em Castanhal, PA. O painel <b>Lightwall®</b> é pouco conhecido, então cada post leva a pessoa um passo adiante, sempre com a obra real como prova.</p>
+        <dl class="caso">
+          <div><dt>Desafio</dt><dd>Colocar a incorporadora de Castanhal, PA, para gerar contatos com anúncios, vendendo um sistema pouco conhecido, o painel <b>Lightwall®</b>.</dd></div>
+          <div><dt>Estratégia</dt><dd>Três campanhas de geração de leads, com a maior parte da verba na que entregava mais alcance. O conteúdo leva a pessoa um passo de cada vez, sempre com a obra real como prova.</dd></div>
+          <div><dt>Resultado</dt><dd>37 novos contatos em 19 dias, formando a base para identificar quais anúncios e públicos trazem as melhores oportunidades.</dd></div>
+        </dl>
         <ul class="funil">
           <li><b>Alcance</b> O que tem dentro dessa parede?</li>
           <li><b>Prova</b> Quanta parede sobe em um dia?</li>
@@ -482,7 +519,11 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
         <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
         <img class="logo-marca" src="assets/logos/montecarlo.webp" width="700" height="671" alt="Monte Carlo Home Resort" loading="lazy">
         <h2>Colocar os anúncios para rodar de novo, do feed à beira da estrada.</h2>
-        <p>Condomínio resort em Apeú, Castanhal, PA. A conta vinha de baixa entrega depois de uma troca de contato. <b>Reestruturei a BM</b> com campanhas e criativos variados para o Meta voltar a receber sinais.</p>
+        <dl class="caso">
+          <div><dt>Desafio</dt><dd>A conta do condomínio em Apeú, Castanhal, PA, vinha de baixa entrega depois de uma troca de contato, e o Meta tinha dificuldade para encontrar quem responderia aos anúncios.</dd></div>
+          <div><dt>Estratégia</dt><dd><b>Reestruturei a BM</b> com seis campanhas e criativos variados, em vez de concentrar tudo em um anúncio, para o Meta voltar a receber sinais. O outdoor reforça a oferta na estrada.</dd></div>
+          <div><dt>Resultado</dt><dd>A distribuição voltou: quase 49 mil pessoas alcançadas. O próximo passo é concentrar a verba nas campanhas que trazem mais contatos.</dd></div>
+        </dl>
         <dl class="ficha">
           <div><dt>pessoas alcançadas</dt><dd data-conta="48720">48.720</dd></div>
           <div><dt>impressões</dt><dd data-conta="79838">79.838</dd></div>
