@@ -165,6 +165,8 @@ img { max-width: 100%; }
 .mcosta { background-color: #bd9238; }
 .montecarlo { background-color: #5f6239; }
 .rf { background-color: #173f8e; }
+.zerofome { background-color: #2A603A; }
+.natal { background-color: #7c1f12; }
 .pilula { display: inline-block; padding: 4px 16px; border: 1.5px solid rgba(255, 255, 255, .62); border-radius: 99px; font-size: 15px; }
 .marca-corpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 26px clamp(24px, 4vw, 64px); margin-top: 22px; align-items: center; }
 .janela { min-width: 0; padding: 20px clamp(18px, 2vw, 28px) 24px; background: rgba(12, 12, 11, .78); border: 1.5px solid rgba(255, 255, 255, .32); border-radius: 26px; }
@@ -218,10 +220,17 @@ img { max-width: 100%; }
 .filmes-grade figure { grid-column: span 2; min-width: 0; }
 .filmes-grade .filme-largo { grid-column: span 3; }
 .filmes-grade video { display: block; width: 100%; height: auto; background: #000; }
+.filmes-grade .desloca { grid-column: 2 / span 2; }
+.motion-grade { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.filmes-grade.motion-grade figure { grid-column: auto; }
+.quadro img.corte { aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
+.motion-cta { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 14px; aspect-ratio: 9 / 16; padding: clamp(18px, 2vw, 28px); border: 1.5px dashed rgba(255, 255, 255, .34); background: radial-gradient(80% 60% at 50% 30%, rgba(214, 51, 29, .28), transparent 70%); color: var(--branco); text-decoration: none; transition: border-color .25s ease, transform .35s cubic-bezier(.2, 1.3, .4, 1); }
+.motion-cta strong { font: 800 clamp(26px, 2.6vw, 40px)/1.02 var(--titulo); letter-spacing: -.03em; color: var(--areia-clara); }
+.motion-cta:hover { border-color: var(--areia); transform: translateY(-6px); }
 .filmes-grade figcaption { margin-top: 8px; font-size: 14px; color: var(--apoio); }
 
 /* Serviços */
-.servicos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px clamp(20px, 2.6vw, 38px); padding-bottom: clamp(44px, 6vw, 84px); }
+.servicos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px clamp(20px, 2.6vw, 38px); padding-bottom: clamp(44px, 6vw, 84px); }
 .servicos li { min-width: 0; }
 .servicos h3 { display: inline-block; font-size: clamp(22px, 2vw, 28px); transition: transform .35s cubic-bezier(.2, 1.5, .4, 1); }
 .servicos li:hover h3 { transform: rotate(1deg) scale(1.05); }
@@ -273,8 +282,8 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   .sobre-foto .recorte { right: auto; left: -6%; width: 112%; }
   .polaroide { width: 32%; top: -4%; left: 0; }
   .colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .abas a { flex: none; margin-right: 14px; padding-right: 6px; font-size: clamp(14.5px, 4.2vw, 26px); }
-  .abas a + a { padding-left: 8px; }
+  .abas a { flex: none; margin-right: 14px; padding-right: 4px; font-size: clamp(12px, 3.25vw, 26px); }
+  .abas a + a { padding-left: 6px; }
   .abas a small { display: none; }
   .abas a::after { right: -13px; width: 18px; }
   .abas .arquivos { display: none; }
@@ -285,10 +294,12 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   .artes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filmes-grade .filme-largo { grid-column: span 6; }
+  .motion-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 480px) {
-  .filmes-grade figure { grid-column: span 3; }
-  .filmes-grade figure:nth-child(3) { grid-column: 2 / span 4; }
+  .filmes-grade figure, .filmes-grade .desloca { grid-column: span 3; }
+  .filmes-grade .sozinho { grid-column: 2 / span 4; }
+  .filmes-grade.motion-grade figure { grid-column: auto; }
   .indices { grid-template-columns: minmax(0, 1fr); }
   .passos { grid-template-columns: minmax(0, 1fr); }
 }
@@ -324,6 +335,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   <nav class="abas" id="social" aria-label="Capítulos">
     <a class="ativa" href="#social" aria-current="true">Social Media<small>Posts · Carrosséis</small></a>
     <a href="#audiovisual">Audiovisual<small>Vídeos · Reels</small></a>
+    <a href="#motion">Motion<small>Comerciais · Anúncios</small></a>
     <a href="#campanhas">Campanhas<small>Marcas · Resultados</small></a>
     <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
   </nav>
@@ -348,6 +360,10 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
       <button class="quadro" type="button"><img src="assets/montecarlo/09.webp" width="900" height="1125" loading="lazy" alt="Quadra de tênis entre palmeiras: sobrados de 230 m²."></button>
       <button class="quadro" type="button"><img src="assets/mcosta/08.webp" width="900" height="1125" loading="lazy" alt="Ficha técnica do painel Lightwall com corte anotado."></button>
       <button class="quadro" type="button"><img src="assets/mcosta/10.webp" width="900" height="1125" loading="lazy" alt="Operário na estrutura: sua próxima obra começa com uma conversa."></button>
+      <button class="quadro" type="button"><img src="assets/zerofome/01.webp" width="900" height="1125" loading="lazy" alt="Zero Fome Valle: fome aqui não mora, com a tela do app no celular."></button>
+      <button class="quadro" type="button"><img src="assets/natal/c1.webp" width="900" height="1125" loading="lazy" alt="Campanha de Natal: árvore montada com artes de clientes e estrela dourada."></button>
+      <button class="quadro" type="button"><img src="assets/zerofome/07.webp" width="900" height="1125" loading="lazy" alt="Zero Fome Valle para lojas: pedido perdido no zap? Aqui não."></button>
+      <button class="quadro" type="button"><img src="assets/natal/c3.webp" width="900" height="1125" loading="lazy" alt="Campanha de Natal: seu produto em movimento, com celular e fita de quadros."></button>
     </div>
     <ul class="nichos">
       <li data-sobe>Imobiliário</li>
@@ -356,6 +372,8 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
       <li data-sobe>Resort</li>
       <li data-sobe>Serviços locais</li>
       <li data-sobe>Eventos</li>
+      <li data-sobe>Delivery</li>
+      <li data-sobe>Varejo</li>
     </ul>
   </section>
 
@@ -400,6 +418,7 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
   <nav class="abas" id="audiovisual" aria-label="Capítulos">
     <a href="#social">Social Media<small>Posts · Carrosséis</small></a>
     <a class="ativa" href="#audiovisual" aria-current="true">Audiovisual<small>Vídeos · Reels</small></a>
+    <a href="#motion">Motion<small>Comerciais · Anúncios</small></a>
     <a href="#campanhas">Campanhas<small>Marcas · Resultados</small></a>
     <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
   </nav>
@@ -408,17 +427,43 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
     <h2 class="dourado" data-varre>Audiovisual</h2>
     <p class="filmes-texto" data-sobe>Vídeos feitos para os mesmos clientes. No <a href="https://www.instagram.com/deyvisonmkt/" target="_blank" rel="noopener">Instagram</a> tem mais: drone, bastidores e cobertura de eventos.</p>
     <div class="filmes-grade">
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/malibu-ferias.webp" src="assets/video/malibu-ferias.mp4"></video><figcaption>Malibu · Reels de férias, narrado · 39 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/mcosta-antes-depois.webp" src="assets/video/mcosta-antes-depois.mp4"></video><figcaption>MCosta · Antes e depois da obra, narrado · 36 s</figcaption></figure>
       <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/mcosta-lightwall.webp" src="assets/video/mcosta-lightwall.mp4"></video><figcaption>MCosta · Sistema Lightwall · 47 s</figcaption></figure>
-      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/malibu-ia.webp" src="assets/video/malibu-ia.mp4"></video><figcaption>Malibu · Reels · 35 s</figcaption></figure>
-      <figure data-sobe><video controls playsinline preload="none" width="720" height="1290" poster="assets/video/montecarlo-reels.webp" src="assets/video/montecarlo-reels.mp4"></video><figcaption>Monte Carlo · Reels · 62 s</figcaption></figure>
+      <figure class="desloca" data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/malibu-ia.webp" src="assets/video/malibu-ia.mp4"></video><figcaption>Malibu · Reels · 35 s</figcaption></figure>
+      <figure class="sozinho" data-sobe><video controls playsinline preload="none" width="720" height="1290" poster="assets/video/montecarlo-reels.webp" src="assets/video/montecarlo-reels.mp4"></video><figcaption>Monte Carlo · Reels · 62 s</figcaption></figure>
       <figure class="filme-largo" data-sobe><video controls playsinline preload="none" width="1280" height="720" poster="assets/video/montecarlo-v01.webp" src="assets/video/montecarlo-v01.mp4"></video><figcaption>Monte Carlo · Filme do empreendimento · 87 s</figcaption></figure>
       <figure class="filme-largo" data-sobe><video controls playsinline preload="none" width="1280" height="720" poster="assets/video/montecarlo-filme.webp" src="assets/video/montecarlo-filme.mp4"></video><figcaption>Monte Carlo · Filme · 62 s</figcaption></figure>
+    </div>
+  </section>
+
+  <nav class="abas" id="motion" aria-label="Capítulos">
+    <a href="#social">Social Media<small>Posts · Carrosséis</small></a>
+    <a href="#audiovisual">Audiovisual<small>Vídeos · Reels</small></a>
+    <a class="ativa" href="#motion" aria-current="true">Motion<small>Comerciais · Anúncios</small></a>
+    <a href="#campanhas">Campanhas<small>Marcas · Resultados</small></a>
+    <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
+  </nav>
+
+  <section class="filmes quadriculado faixa">
+    <h2 class="dourado" data-varre>Motion</h2>
+    <p class="filmes-texto" data-sobe>Comerciais e anúncios animados do zero, com a narração e a trilha presas a cada cena. Telas reais do app, produtos da loja e artes da marca ganham movimento.</p>
+    <div class="filmes-grade motion-grade">
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/zerofome-interativo.webp" src="assets/video/zerofome-interativo.mp4"></video><figcaption>Zero Fome Valle · Comercial interativo · 28 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/zerofome-vitrine.webp" src="assets/video/zerofome-vitrine.mp4"></video><figcaption>Zero Fome Valle · Vitrine para lojistas · 30 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/kero-doce.webp" src="assets/video/kero-doce.mp4"></video><figcaption>Kero Doces · Loja nova no app · 30 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/aida-cakes.webp" src="assets/video/aida-cakes.mp4"></video><figcaption>Aida Cakes · Loja nova no app · 30 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/encarte-ofertas.webp" src="assets/video/encarte-ofertas.mp4"></video><figcaption>Encarte animado · Projeto conceito · 29 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/natal-reel.webp" src="assets/video/natal-reel.mp4"></video><figcaption>Campanha de Natal · Artes + motion · 21 s</figcaption></figure>
+      <figure data-sobe><video controls playsinline preload="none" width="720" height="1280" poster="assets/video/anuncio-sites.webp" src="assets/video/anuncio-sites.mp4"></video><figcaption>Anúncio · Portfólios e sites · 25 s</figcaption></figure>
+      <a class="motion-cta" href="#contato" data-sobe><span class="etiqueta">Motion design</span><strong>O próximo pode ser o seu.</strong><span>Peça o seu comercial animado &rarr;</span></a>
     </div>
   </section>
 
   <nav class="abas" id="campanhas" aria-label="Capítulos">
     <a href="#social">Social Media<small>Posts · Carrosséis</small></a>
     <a href="#audiovisual">Audiovisual<small>Vídeos · Reels</small></a>
+    <a href="#motion">Motion<small>Comerciais · Anúncios</small></a>
     <a class="ativa" href="#campanhas" aria-current="true">Campanhas<small>Marcas · Resultados</small></a>
     <span class="arquivos"><span class="sinais" aria-hidden="true"><i></i><i></i><i></i></span>ARQUIVOS</span>
   </nav>
@@ -625,11 +670,60 @@ dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
     </div>
   </article>
 
+  <article class="marca zerofome faixa" id="zerofome">
+    <span class="pilula" data-carimbo>Marca própria · App + conteúdo</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="logo-marca" src="assets/logos/zerofome.webp" width="480" height="448" alt="Logo Zero Fome Valle">
+        <h2>Um delivery do bairro, da marca ao comercial.</h2>
+        <p>Projeto meu em Castanhal, PA, para os bairros Imperador, Jardim Castanhal (Valle) e Japim. Criei a marca, o app e a comunicação: <b>10 posts</b>, stories e <b>comerciais animados</b> para clientes e para lojas como Kero Doces e Aida Cakes.</p>
+        <div class="cores" aria-hidden="true"><i style="background:#2A603A"></i><i style="background:#B9E36B"></i><i style="background:#E84525"></i><i style="background:#FDF4D9"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/zerofome/02.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m3" src="assets/zerofome/06.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/zerofome/03.webp" width="900" height="1125" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/zerofome/04.webp" width="900" height="1125" loading="lazy" alt="Seu lanche não some no caminho: acompanhamento do pedido no app."></button>
+      <button class="quadro" type="button"><img src="assets/zerofome/08.webp" width="900" height="1125" loading="lazy" alt="Quanto você vendeu hoje? Financeiro da loja separado por Pix, cartão e dinheiro."></button>
+      <button class="quadro" type="button"><img src="assets/zerofome/09.webp" width="900" height="1125" loading="lazy" alt="Entregador com o roteiro na mão: endereço, mapa e pagamento."></button>
+      <button class="quadro" type="button"><img src="assets/zerofome/10.webp" width="900" height="1125" loading="lazy" alt="O cliente chama, o cardápio chega: mensagem automática no WhatsApp Business."></button>
+    </div>
+  </article>
+
+  <article class="marca natal faixa" id="natal">
+    <span class="pilula" data-carimbo>Campanha sazonal · Artes + motion</span>
+    <div class="marca-corpo">
+      <div class="janela" data-sobe>
+        <div class="sinais" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="logo-texto">Natal 2026</p>
+        <h2>Os próprios trabalhos viraram a árvore de Natal.</h2>
+        <p>Campanha para vender artes e motion no fim de ano. As peças de clientes formam a árvore, com os produtos sempre à vista, em <b>carrossel de 5 telas</b>, <b>2 stories</b> e um <b>Reel animado</b> de 21 s.</p>
+        <div class="cores" aria-hidden="true"><i style="background:#141312"></i><i style="background:#d6331d"></i><i style="background:#dcc496"></i><i style="background:#1f4d36"></i></div>
+      </div>
+      <div class="maquete" aria-hidden="true">
+        <img class="impresso m1" src="assets/natal/c2.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m3" src="assets/natal/c5.webp" width="900" height="1125" alt="" loading="lazy">
+        <img class="impresso m2" src="assets/natal/c1.webp" width="900" height="1125" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="artes" data-grupo>
+      <button class="quadro" type="button"><img src="assets/natal/c3.webp" width="900" height="1125" loading="lazy" alt="Seu produto em movimento: celular com encarte animado e fita de quadros."></button>
+      <button class="quadro" type="button"><img src="assets/natal/c4.webp" width="900" height="1125" loading="lazy" alt="Feito sob medida pro seu nicho: lojas, imóveis, serviços e delivery."></button>
+      <button class="quadro" type="button"><img src="assets/natal/s1.webp" width="900" height="1600" class="corte" loading="lazy" alt="Story: sua marca pronta pro Natal? Responda com NATAL."></button>
+      <button class="quadro" type="button"><img src="assets/natal/s2.webp" width="900" height="1600" class="corte" loading="lazy" alt="Story: seu Natal em movimento, com celular e laço dourado."></button>
+    </div>
+  </article>
+
   <ul class="servicos quadriculado faixa" aria-label="Serviços">
     <li data-sobe><h3 class="etiqueta">Social media</h3><p>Pauta, calendário e legenda, com objetivo definido para cada post.</p></li>
     <li data-sobe><h3 class="etiqueta">Design</h3><p>Carrosséis, stories, posts únicos e peças impressas, como outdoor.</p></li>
     <li data-sobe><h3 class="etiqueta">Tráfego pago</h3><p>Campanhas no Meta Ads, estruturação de BM e relatório de resultados.</p></li>
     <li data-sobe><h3 class="etiqueta">Audiovisual</h3><p>Captação, drone e edição de reels e filmes para marcas e eventos.</p></li>
+    <li data-sobe><h3 class="etiqueta">Motion design</h3><p>Comerciais animados, encartes que se mexem e anúncios para Reels.</p></li>
   </ul>
 </main>
 
